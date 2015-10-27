@@ -1,0 +1,33 @@
+<project name="epp-rtk-java-extras" default="jar" basedir=".">
+	<property name="project.version" value="0.1"/>
+	<property name="build.dir" value="build"/>
+	<property name="build.class.dir" value="build/classes"/>
+	<property name="dest.dir" value="dist"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="src.dir" value="src"/>
+	<property name="dest.file" value="${dest.dir}/epp-rtk-java-extras-${project.version}.jar"/>
+
+	<path id="build.class.path">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	<target name="clean">
+		<delete dir="${dest.dir}"/>
+		<delete dir="${build.class.dir}"/>
+		<delete dir="${build.dir}"/>
+	</target>
+	<target name="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.class.dir}"/>
+		<mkdir dir="${dest.dir}"/>
+	</target>
+	<target name="compile" depends="init">
+		<javac includeantruntime="false" destdir="${build.class.dir}" srcdir="${src.dir}">
+			<classpath refid="build.class.path"/>
+		</javac>
+	</target>
+	<target name="jar" depends="compile">
+		<jar jarfile="${dest.file}" basedir="${build.class.dir}" includes="**"/>
+	</target>
+</project>
