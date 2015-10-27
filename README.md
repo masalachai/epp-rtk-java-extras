@@ -12,6 +12,6 @@ I have multiple EPP RTK deployments on the same machine and not all use the same
 
 There are more unorganized modifications for EPP RTK that I am using. I will release those as well after some refactoring.
 
-To build the library, just clone the repo and run the ant build script.
+To build the library, just clone the repo and run the ant build script. It builds with Bouncy Castle 1.5 and EPP RTK 0.9.9.
 
 To use it, just create objects of the inherited EPPClient class provided in this library instead of the EPP RTK one.
