@@ -203,13 +203,9 @@ public class EPPTransportTCPTLS extends
 				throw new IOException(xcp.getMessage());
 			}
 
-			if (local_address_ != null) {
-				// connect and bind to specified address and port
-				InetAddress loc_addr = InetAddress.getByName(local_address_);
-				socket_to_server_ = (Socket) ssl_factory.createSocket(epp_host_name_, epp_host_port_, loc_addr, local_port_);
-			} else {
-				socket_to_server_ = (Socket) ssl_factory.createSocket(epp_host_name_, epp_host_port_);
-			}
+			// connect and bind to specified address and port
+			InetAddress loc_addr = InetAddress.getByName(local_address_);
+			socket_to_server_ = (Socket) ssl_factory.createSocket(epp_host_name_, epp_host_port_, loc_addr, local_port_);
 			
 			// Force the handshake to happen now so we can check for a good connection
 			SSLSession la_session = ((SSLSocket) socket_to_server_).getSession();
