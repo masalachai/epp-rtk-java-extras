@@ -11,3 +11,5 @@ I have multiple EPP RTK deployments on the same machine and not all use the same
 3) A method to fetch the greeting in XML form
 
 There are more unorganized modifications that are being used for EPP RTK. I will release those as well after some refactoring.
+
+To build the library, just clone the repo and run the ant build script.
