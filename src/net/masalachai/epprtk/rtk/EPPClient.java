@@ -46,6 +46,8 @@ public class EPPClient extends com.tucows.oxrs.epprtk.rtk.EPPClient {
 	protected int local_port_;
 	protected EPPTransportBase transport_;
 
+	protected String ssl_props_location_;
+	
 	/**
 	 * Constructor with local address and port to bind to.
 	 *
@@ -55,18 +57,21 @@ public class EPPClient extends com.tucows.oxrs.epprtk.rtk.EPPClient {
 	 * @param epp_password The password associated with the client id
 	 * @param local_address The local IP address to bind to
 	 * @param local_port The local port to bind to
+	 * @param ssl_props_location The directory path to the SSL properties file
 	 */
 	public EPPClient(String epp_host_name,
 			int epp_host_port,
 			String epp_client_id,
 			String epp_password,
 			String local_address,
-			int local_port) {
+			int local_port,
+			String ssl_props_location) {
 		super(epp_host_name, epp_host_port,
 				epp_client_id, epp_password);
 
 		local_address_ = local_address;
 		local_port_ = local_port;
+		ssl_props_location_ = ssl_props_location;
 	}
 
 	/**
@@ -91,7 +96,7 @@ public class EPPClient extends com.tucows.oxrs.epprtk.rtk.EPPClient {
 			EPPTransportException {
 
 		transport_ = new EPPTransportTCPTLS(getEPPHostName(), getEPPHostPort(),
-				getEPPTimeout(), local_address_, local_port_);
+				getEPPTimeout(), local_address_, local_port_, ssl_props_location_);
 
 		// ENABLE BC PROVIDER for PKCS12 keystore
 		try {
