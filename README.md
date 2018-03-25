@@ -1,6 +1,6 @@
 # EPP RTK Java Extras
 
-This library extends the Java EPP Registrar Toolkit (http://sourceforge.net/projects/epp-rtk/files/epp-rtk-java/) and adds the following features.
+This library extends the [Java EPP Registrar Toolkit](http://sourceforge.net/projects/epp-rtk/files/epp-rtk-java/) and adds the following features.
 
 1) The ability to bind a TLS connection to a particular local IP address and port because registries tend to restrict access by IP.
 This is useful in the case that you have mutliple interfaces on your machine.
