@@ -10,7 +10,7 @@ I have multiple EPP RTK deployments on the same machine and not all use the same
 
 3) A method to fetch the greeting in XML form
 
-There are more unorganized modifications for EPP RTK that I am using. I will release those as well after some refactoring.
+There are more unorganized modifications for EPP RTK that I am using. The EPP extensions that I've added can be [found here](https://github.com/masalachai/epp-rtk-java-extensions)
 
 To build the library, just clone the repo and run the ant build script. It builds with Bouncy Castle 1.5 and EPP RTK 0.9.9.
 
